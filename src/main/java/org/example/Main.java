@@ -1,4 +1,5 @@
 package org.example;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class MyMath{
@@ -12,11 +13,17 @@ class MyMath{
         return Gcd(b%a, a);
     }
 
-    public static boolean IsPrime(int x){
-        for(int d=2; d*d<=x; ++d){
-            if (x%d == 0) return false;
+    public static ArrayList<Integer> Factor(int x){
+        ArrayList<Integer> factors = new ArrayList<Integer>();
+        for(int d = 2; d*d<=x; ++d){
+            if (x%d == 0){
+                factors.add(d);
+                while (x%d == 0){
+                    x/=d;
+                }
+            }
         }
-        return true;
+        return factors;
     }
 }
 
