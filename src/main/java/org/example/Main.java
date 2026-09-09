@@ -11,6 +11,13 @@ class MyMath{
         if (a==0) return b;
         return Gcd(b%a, a);
     }
+
+    public static boolean IsPrime(int x){
+        for(int d=2; d*d<=x; ++d){
+            if (x%d == 0) return false;
+        }
+        return true;
+    }
 }
 
 public class Main {
